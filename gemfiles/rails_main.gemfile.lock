@@ -99,7 +99,7 @@ PATH
   specs:
     heroic_icons (0.1.0)
       actionview (>= 6.0)
-      nokogiri (~> 1.14)
+      nokogiri (>= 1.14)
 
 GEM
   remote: https://rubygems.org/
