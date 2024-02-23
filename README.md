@@ -1,15 +1,17 @@
 
 Originally based on the work originally done by https://github.com/andrewjmead  Full credit goes to him, though I ended up rewriting a bunch of it.
 
-# Rails Heroicons
+# Heroicons for Rails
 Use icons from [heroicons.com](https://heroicons.com) in your Rails applications.
 
 ## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rails_heroicons', git: 'git@github.com:edk/rails_heroicons.git'
+gem "heroic_icons", git: "https://github.com/edk/heroic_icons"
 ```
+
+Pick a ref, tag or branch as needed.
 
 And then execute:
 ```bash
