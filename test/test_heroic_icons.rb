@@ -9,8 +9,7 @@ class TestHeroicIcons < Minitest::Test
 
   def test_icon_not_found
     assert_raises(HeroicIcons::IconNotFound) do
-      HeroicIcons::Icons.new.icon('nonexistent')
+      HeroicIcons::Icons.new.icon("nonexistent")
     end
   end
-
 end

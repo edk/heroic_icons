@@ -1,4 +1,3 @@
-
 module HeroicIcons
   class << self
     attr_accessor :configuration
@@ -13,7 +12,7 @@ module HeroicIcons
     attr_accessor :default_classes
 
     def initialize
-      @default_classes = ''
+      @default_classes = ""
     end
   end
 end
