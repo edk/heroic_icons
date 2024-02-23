@@ -8,10 +8,12 @@ module HeroicIcons
     # Updated method signature to accept name and a hash for additional options
     def icon(name, **options)
       # append or replace?  hmmm.
-      if options[:override_class].present? || options[:class].blank?
-        options[:class] = HeroicIcons.configuration.default_classes
+      if options[:override_class].present? 
+        options[:class] = options.delete(:override_class)
       elsif options[:class].present?
         options[:class] = "#{HeroicIcons.configuration.default_classes} #{options[:class]}"
+      else
+        options[:class] = HeroicIcons.configuration.default_classes
       end
       file_path = determine_file_path(name, options)
 

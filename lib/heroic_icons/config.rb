@@ -1,11 +1,14 @@
+# lib/heroic_icons/config.rb
+
 module HeroicIcons
   class << self
-    attr_accessor :configuration
-  end
+    def configuration
+      @configuration ||= Configuration.new
+    end
 
-  def self.configure
-    self.configuration ||= Configuration.new
-    yield(configuration)
+    def configure
+      yield(configuration)
+    end
   end
 
   class Configuration
