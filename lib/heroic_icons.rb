@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
 require_relative "heroic_icons/version"
+require "action_view"
+require "heroic_icons/view_helper"
 
 module HeroicIcons
   class Error < StandardError; end
 
-  # Method to define the gem's root directory
-  def self.root(path = nil)
-    base = File.expand_path("../..", __FILE__)
-    path ? File.join(base, path) : base
+  def self.root
+    File.dirname(__dir__)
   end
 end
+
+# ActionView::Base.send :include, HeroicIcons::ViewHelper

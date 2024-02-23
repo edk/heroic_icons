@@ -1,3 +1,5 @@
+require "heroic_icons/view_helper"
+
 module HeroicIcons
   class Railtie < ::Rails::Railtie
     initializer "heroic_icons.view_helpers" do

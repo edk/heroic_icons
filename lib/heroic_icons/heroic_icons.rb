@@ -1,6 +1,6 @@
 require "nokogiri"
 
-module RailsHeroicons
+module HeroicIcons
   class IconNotFound < RuntimeError
   end
 
@@ -13,7 +13,7 @@ module RailsHeroicons
       begin
         file_data = File.read(file_path)
       rescue
-        raise RailsHeroicons::IconNotFound, "Icon not found: #{name}"
+        raise HeroicIcons::IconNotFound, "Icon not found: #{name}"
       end
 
       # Modify SVG with additional attributes if any
@@ -38,7 +38,8 @@ module RailsHeroicons
       # For micro and mini sizes, force to solid for now
       style_directory = (size_directory == "20" || size_directory == "16") ? "solid" : hi_style
 
-      RailsHeroicons.root("lib/rails_heroicons/icons/#{size_directory}/#{style_directory}/#{name}.svg")
+      # HeroicIcons.root("lib/rails_heroicons/icons/#{size_directory}/#{style_directory}/#{name}.svg")
+      File.join(__dir__, "icons", size_directory, style_directory, "#{name}.svg")
     end
 
     def modify_svg(file_data, name, options)
