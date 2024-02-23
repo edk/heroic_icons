@@ -46,7 +46,7 @@ module HeroicIcons
       svg = frag.at_css("svg")
 
       options.each do |key, value|
-        next if key == :hi_style # Skip hi_style as it's used for file path determination
+        next if key == :hi_style || key == :size
         svg.set_attribute(key.to_s, value)
       end
 

@@ -1,5 +1,5 @@
 
-Based on the work originally done by https://github.com/andrewjmead   Full credit goes to him.
+Originally based on the work originally done by https://github.com/andrewjmead  Full credit goes to him, though I ended up rewriting a bunch of it.
 
 # Rails Heroicons
 Use icons from [heroicons.com](https://heroicons.com) in your Rails applications.
@@ -21,7 +21,7 @@ $ bundle
 To use the icon method, you need to specify the icon name and optionally pass additional attributes to add to the SVG.
 
 ```
-icon(name, **options)
+heroic_icon(name, **options)
 ```
 
 * `name`: The name of the icon you want to use. e.g. "plus", "trash", etc. Refer to the heroicons website.
@@ -29,7 +29,7 @@ icon(name, **options)
 
 The following options can be passed to customize the SVG icon:
 
-* `hi_style:` Specifies the style of the icon for regular sizes. It can be either `outline` or `solid`. `solid` the default.  Only solid is available for mini and micro.
+* `hi_style:` Specifies the style of the icon for regular sizes. It can be either `outline` or `solid`. `solid` the default.  Solid is the only choice for mini and micro.
 * `style`: This does not specify the heroicon style, but instead, the value of the style attribute of the svg element.
 * `size:` There are 3 sizes. `micro`, `mini`, and `regular` (default).
 * `class:` Sets the CSS attr of the SVG element (previously `class_name`).
