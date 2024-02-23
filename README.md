@@ -1,35 +1,60 @@
-# HeroicIcons
 
-TODO: Delete this and the text below, and describe your gem
+Based on the work originally done by https://github.com/andrewjmead   Full credit goes to him.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/heroic_icons`. To experiment with that code, run `bin/console` for an interactive prompt.
+# Rails Heroicons
+Use icons from [heroicons.com](https://heroicons.com) in your Rails applications.
 
 ## Installation
+Add this line to your application's Gemfile:
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+```ruby
+gem 'rails_heroicons', git: 'git@github.com:edk/rails_heroicons.git'
+```
 
-Install the gem and add to the application's Gemfile by executing:
-
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+And then execute:
+```bash
+$ bundle
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+To use the icon method, you need to specify the icon name and optionally pass additional attributes to add to the SVG.
 
-## Development
+```
+icon(name, **options)
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+* `name`: The name of the icon you want to use. e.g. "plus", "trash", etc. Refer to the heroicons website.
+* `**options`: A hash of options to customize the SVG. This is optional and can include several attributes described below.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+The following options can be passed to customize the SVG icon:
 
-## Contributing
+* `hi_style:` Specifies the style of the icon for regular sizes. It can be either `outline` or `solid`. `solid` the default.  Only solid is available for mini and micro.
+* `style`: This does not specify the heroicon style, but instead, the value of the style attribute of the svg element.
+* `size:` There are 3 sizes. `micro`, `mini`, and `regular` (default).
+* `class:` Sets the CSS attr of the SVG element (previously `class_name`).
+* Any other HTML attributes: You can include attributes such as aria-label, role, etc.
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/heroic_icons.
+### Icon Usage Examples
+
+```
+<%= icon('camera', hi_style: 'outline') %>
+```
+
+To include a outline icon of mini size:
+
+```
+<%= icon('user', size: 'mini') %>
+```
+
+```
+<%= icon('bell', class: 'alert-icon', 'aria-label': 'Notification') %>
+```
+
+BREAKING CHANGE:  Sorry, I decided to make a breaking change (it's a different gem after all)
+to allow heroicon styles (outline, solid, etc) to be passed via `:hi_styles` option.
+This was previously passed via the `:styles` option.
+This is to allow for passing in actual styles to the the svg element.
 
 ## License
-
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
