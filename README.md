@@ -1,4 +1,8 @@
 
+
+[![CI](https://github.com/edk/heroic_icons/actions/workflows/main.yml/badge.svg)](https://github.com/edk/heroic_icons/actions/workflows/main.yml)
+
+
 Originally based on the work originally done by https://github.com/andrewjmead  Full credit goes to him, though I ended up rewriting a bunch of it.
 
 # Heroicons for Rails
