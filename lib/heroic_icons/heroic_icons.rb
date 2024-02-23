@@ -38,7 +38,6 @@ module HeroicIcons
       # For micro and mini sizes, force to solid for now
       style_directory = (size_directory == "20" || size_directory == "16") ? "solid" : hi_style
 
-      # HeroicIcons.root("lib/rails_heroicons/icons/#{size_directory}/#{style_directory}/#{name}.svg")
       File.join(__dir__, "icons", size_directory, style_directory, "#{name}.svg")
     end
 
