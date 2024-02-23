@@ -7,7 +7,12 @@ module HeroicIcons
   class Icons
     # Updated method signature to accept name and a hash for additional options
     def icon(name, **options)
-      # Determine file path based on the new directory structure
+      # append or replace?  hmmm.
+      if options[:override_class].present? || options[:class].blank?
+        options[:class] = HeroicIcons.configuration.default_classes
+      elsif options[:class].present?
+        options[:class] = "#{HeroicIcons.configuration.default_classes} #{options[:class]}"
+      end
       file_path = determine_file_path(name, options)
 
       begin

@@ -6,5 +6,7 @@ source "https://rubygems.org"
 gemspec
 
 group :development, :test do
-  gem "standard", "~> 1.3"
+  gem "standard"
+  gem "standard-rails"
+  gem "standard-performance"
 end

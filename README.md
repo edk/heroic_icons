@@ -32,8 +32,20 @@ The following options can be passed to customize the SVG icon:
 * `hi_style:` Specifies the style of the icon for regular sizes. It can be either `outline` or `solid`. `solid` the default.  Solid is the only choice for mini and micro.
 * `style`: This does not specify the heroicon style, but instead, the value of the style attribute of the svg element.
 * `size:` There are 3 sizes. `micro`, `mini`, and `regular` (default).
-* `class:` Sets the CSS attr of the SVG element (previously `class_name`).
+* `class:` Sets the CSS attr of the SVG element.  If using default classes (see below) this is added to the default classes.
+* `override_class:` Sets the CSS attr of the SVG element, and does NOT use the default classes.
 * Any other HTML attributes: You can include attributes such as aria-label, role, etc.
+
+### default class initialization
+
+Create an initializer:
+```
+# config/initializers/heroic_icons.rb
+
+HeroicIcons.configure do |config|
+  config.default_classes = "h-6 w-6"
+end
+```
 
 ### Icon Usage Examples
 
