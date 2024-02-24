@@ -9,12 +9,12 @@ Gem::Specification.new do |spec|
   spec.email = ["54091+edk@users.noreply.github.com"]
 
   spec.summary = "Render heroicons svg inline"
-  spec.description = "Render heroicons svg inline"
+  spec.description = "Simple render heroicons svg inline"
   spec.homepage = "https://github.com/edk/heroic_icons"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
+  spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/edk/heroic_icons"
